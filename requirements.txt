@@ -1,0 +1,7 @@
+Django
+django-filter
+djangorestframework
+Markdown
+psycopg2
+psycopg2-binary
+djangorestframework-jwt

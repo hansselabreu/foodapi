@@ -13,5 +13,10 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserAdminChangeForm
     model = CustomUser
     list_display = ('username', 'argentum_id',)
-
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2', 'argentum_id')}
+        ),
+    ) 
 admin.site.register(CustomUser, CustomUserAdmin)

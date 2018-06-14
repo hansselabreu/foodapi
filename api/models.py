@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth import get_user_model
+from django.conf import settings
 # Create your models here.
 
 
@@ -43,7 +44,6 @@ class CustomUser(AbstractUser):
 
 
 class Food(models.Model):
-    User = get_user_model()
     order_date = models.DateTimeField(auto_now=True)
     description = models.CharField(max_length=200)
-    user_that_ordered = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_that_ordered = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
